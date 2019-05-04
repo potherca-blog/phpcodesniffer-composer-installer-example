@@ -1,0 +1,22 @@
+{
+    "name": "potherca/phpcodesniffer-composer-installer-example",
+    "description": "An example of how to use the phpcodesniffer-composer-installer",
+    "license": "GPL-3.0+",
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer" : "*",
+        "phpcompatibility/php-compatibility": "*",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "scripts": {
+        "codesniffer": [
+            "phpcs valid"
+        ],
+        "post-install-cmd": [
+            "@codesniffer"
+        ],
+        "run-codesniffer": [
+            "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
+            "@codesniffer"
+        ]
+    }
+}
